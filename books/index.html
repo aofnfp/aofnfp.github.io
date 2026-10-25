@@ -71,6 +71,14 @@
   footer.site .inner { max-width:680px; margin:0 auto; padding:0 20px; }
   @media (max-width:720px){ .cards{grid-template-columns:1fr;} .cols3{grid-template-columns:1fr;} h1{font-size:28px;} }
 </style>
+<!-- Google tag (gtag.js) — Unstuck Press GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ST64MNDCX6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ST64MNDCX6');
+</script>
 </head>
 <body>
 
@@ -130,5 +138,13 @@
 <p>© 2026 Unstuck Press</p>
 </div></footer>
 
+<script>
+document.querySelectorAll('a[href*="gumroad.com/l/"]').forEach(function(a){
+  a.addEventListener('click', function(){
+    var m = a.href.match(/\/l\/([^/?#]+)/);
+    if (window.gtag) { gtag('event', 'checkout_click', { product: m ? m[1] : 'unknown', value: 37, currency: 'USD' }); }
+  });
+});
+</script>
 </body>
 </html>
